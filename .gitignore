@@ -1,0 +1,17 @@
+._*
+.DS_Store
+update.sh
+Thumbs.db
+*.bak
+*.log
+*.pyc
+*.rar
+*.rbf
+*oauth*.txt
+release_*
+MiSTer_*
+/build/
+/tmp
+/node_modules
+/unrar_folders
+/__pycache__
