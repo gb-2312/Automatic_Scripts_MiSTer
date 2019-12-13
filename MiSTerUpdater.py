@@ -26,6 +26,8 @@ UPDATE_MISTER_TUPLE = (
 	'SMS_MiSTer',
 	'SNES_MiSTer',
 	'TurboGrafx16_MiSTer',
+	'MegaCD_MiSTer',
+	'GBA_MiSTer',
 )
 
 # Matching: keywords of download-file
