@@ -65,8 +65,8 @@ def get_release_rar_file_name(current_mister_files = None):
 
 	# throws an exception if it does not match!
 	if not release_result_list:
-		raise Exception('Please check your network and confirm that the release package `%s2YYYMMdd%s` has been downloaded successfully!'\
-		 % (RAR_PREFIX, RAR_SUFFIX))
+		raise Exception('Please check your network and confirm that the release package `%s2YYYMMdd%s` has been downloaded successfully!' \
+			% (RAR_PREFIX, RAR_SUFFIX))
 
 	return release_result_list[0]
 
