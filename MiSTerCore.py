@@ -39,6 +39,11 @@ UPDATE_DOT_SHELL = 'update.sh'
 # Matching: keywords of download-file
 DOWNLOADING_MATCH_FILE_KEYWORDS = None
 
+# Commit: keywords of `.rbf file`
+COMMIT_RBF_FILE_KEYWORDS = (
+	'release',
+	'add rbf',
+)
 
 '''
 	Author
@@ -244,7 +249,7 @@ def parse_last_commit(github_username = None, remote_git_repo_name = None, old_m
 		raise Exception('commit_json_parse_list is Nil!')
 
 	for commit_unit in commit_json_parse_list:
-		if commit_unit['commit'] and commit_unit['commit']['message'].find('Release') != -1 and commit_unit['commit']['tree']:
+		if commit_unit['commit'] and [commit_rbf_keyword for commit_rbf_keyword in COMMIT_RBF_FILE_KEYWORDS if commit_rbf_keyword in commit_unit['commit']['message'].lower()] and commit_unit['commit']['tree']:
 			# Always match the last submitted record
 			tree_url = commit_unit['commit']['tree']['url']
 			print2ln('tree_url: %s' % tree_url)
