@@ -16,6 +16,7 @@ RENAME_MATCH_FILE_DICT = {
 
 MISTER_VOLUME_NAME = 'MiSTer_Data'
 UBOOT_VOLUME_NAME = 'UBOOT'
+MISTER_BLOCK_SIZE = '32k'
 
 
 '''
@@ -122,7 +123,7 @@ class Platform(object):
 			raise Exception('self.unzipped_dir is Nil! uboot_volume_name is Nil! or self.UBOOT_PART is Nil!')
 
 		print2ln('Writing uboot image to the %s partition (sudo may ask for your password)...' % (uboot_volume_name))
-		exec_shell('sudo dd if=%s/files/linux/uboot.img of=%s bs=64k' % (self.unzipped_dir, self.UBOOT_PART))
+		exec_shell('sudo dd if=%s/files/linux/uboot.img of=%s bs=%s' % (self.unzipped_dir, self.UBOOT_PART, MISTER_BLOCK_SIZE))
 
 	'''
 		mount
