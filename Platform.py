@@ -16,7 +16,8 @@ RENAME_MATCH_FILE_DICT = {
 
 MISTER_VOLUME_NAME = 'MiSTer_Data'
 UBOOT_VOLUME_NAME = 'UBOOT'
-MISTER_BLOCK_SIZE = '32k'
+MISTER_BLOCK_UNIT = 32
+MISTER_BLOCK_SIZE = '%dk' % MISTER_BLOCK_UNIT
 
 
 '''
@@ -253,9 +254,9 @@ EOF
 
 		print2ln('Creating the %s partition' % (MISTER_VOLUME_NAME))
 
-		exec_shell('sudo mkfs.exfat -n "%s" %s' % (MISTER_VOLUME_NAME, self.MISTER_PART))
+		exec_shell('sudo mkfs.exfat -s %d -n "%s" %s' % (MISTER_BLOCK_UNIT, MISTER_VOLUME_NAME, self.MISTER_PART))
 
-		exec_shell('sudo mkfs.exfat -n "%s" %s' % (UBOOT_VOLUME_NAME, self.UBOOT_PART))
+		exec_shell('sudo mkfs.exfat -s %d -n "%s" %s' % (MISTER_BLOCK_UNIT, UBOOT_VOLUME_NAME, self.UBOOT_PART))
 
 		print2ln('Syncing')
 
