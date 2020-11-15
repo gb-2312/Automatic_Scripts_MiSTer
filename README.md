@@ -24,10 +24,10 @@ Make sure your MiSTer board is connected to the Internet using ethernet.
 * [python 2.7 or later](https://python.org)
 * pip(if not install, then open a terminal and running: `python -m ensurepip` or `python Pip.py`)
 * unrar(only used for `MiSTer SD card installer`):  
-	(MacOSX: install using [homebrew](https://brew.sh/), `brew install unrar`)  
+	(MacOSX: install using [homebrew](https://brew.sh), `brew install unrar`)  
 	(CentOS: add 3rd-party repo, `yum install unrar`)  
 	(Debian/Ubuntu: `apt-get install unrar`)  
-	Or manually compile the software source code from [rarlib](https://www.rarlab.com/)
+	Or manually compile the software source code from [rarlib](https://www.rarlab.com)
 
 ## Usage
 Open a terminal, clone this repository and change into the directory.
@@ -117,4 +117,4 @@ Ensuring that the same type of `.rbf` file retains only the latest one.
 
 ## Problems, issues
 If you run into any problems,
-[open an issue](https://github.com/gb-2312/Automatic_Scripts_MiSTer/issues), thanks!
+[open an issue](../../issues), thanks!
