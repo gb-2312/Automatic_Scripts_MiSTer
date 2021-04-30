@@ -122,7 +122,7 @@ if __name__ == '__main__':
 	updater = Updater(DOWNLOADING_MATCH_FILE_KEYWORDS, UPDATE_MISTER_TUPLE)
 
 	# setup and upgrade-download!
-	updater.setup_and_upgrade_download()
+	updater.setup_and_upgrade_download(False)
 
 	# query again! must be non-nil
 	current_mister_files = check_current_mister_files()
