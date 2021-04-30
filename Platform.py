@@ -31,6 +31,7 @@ class Platform(object):
 		self.default_device_name = None
 		self.device_name = device_name
 		self.mister_install_dir = None
+		self.mister_scripts_dir = None
 		self.clean_objects = None
 		self.MISTER_PART = None
 		self.UBOOT_PART = None
@@ -159,7 +160,7 @@ class Platform(object):
 			shutil.copy(current_mister, self.mister_install_dir + '/%s' % (Platform.get_install_cp_file_name(current_mister)))
 
 		# copy shell-file
-		try_copy_update_dot_sh_file(self.mister_install_dir)
+		try_copy_update_dot_sh_file(self.mister_install_dir + '/%s' % (self.mister_scripts_dir))
 
 	'''
 		clean
@@ -194,6 +195,7 @@ class Linux(Platform):
 		self.device_name = device_name
 		self.unzipped_dir = unzipped_dir
 		self.mister_install_dir = './mnt/%s/' % (MISTER_VOLUME_NAME)
+		self.mister_scripts_dir = './Scripts'
 		self.clean_objects = (
 			self.unzipped_dir,
 			self.mister_install_dir,
@@ -315,6 +317,7 @@ class MacOSX(Platform):
 		self.device_name = device_name
 		self.unzipped_dir = unzipped_dir
 		self.mister_install_dir = '/Volumes/%s' % (MISTER_VOLUME_NAME)
+		self.mister_scripts_dir = './Scripts'
 		self.clean_objects = (
 			self.unzipped_dir,
 			'.Spotlight-V100',
