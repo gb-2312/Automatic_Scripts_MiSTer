@@ -31,11 +31,6 @@ RAW_HEADERS = {
 	'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36',
 }
 
-# update_script repo name
-UPDATE_SH_GIT_REPO_NAME = 'Updater_script_MiSTer'
-# update.sh
-UPDATE_DOT_SHELL = 'update.sh'
-
 # Matching: keywords of download-file
 DOWNLOADING_MATCH_FILE_KEYWORDS = None
 
@@ -317,24 +312,8 @@ def upgrade_download(update_mister_tuple = None, oauth_headers = None):
 	for update_unit in update_mister_tuple:
 		parse_last_commit(GLOBAL_ORGANIZATIONS, update_unit, old_mister_files)
 
-	# saving update-mister-script
-	direct_raw_save(GLOBAL_ORGANIZATIONS, UPDATE_SH_GIT_REPO_NAME, UPDATE_DOT_SHELL)
-
 	# at last, delete oldest mister files!
 	del_old_mister_files(old_mister_files)
-
-'''
-	try: copy update.sh into dest_folder
-'''
-def try_copy_update_dot_sh_file(dest_folder = None):
-	if not dest_folder:
-		raise Exception('dest_folder is Nil!')
-
-	# file not exists, ignore!
-	if not os.path.isfile(UPDATE_DOT_SHELL):
-		return
-
-	shutil.copy(UPDATE_DOT_SHELL, dest_folder)
 
 '''
 	read updater repository_list from updater_repository_list.txt

@@ -159,9 +159,6 @@ class Platform(object):
 			print2ln('Copying file `%s` to dir: `%s`' % (current_mister, self.mister_install_dir))
 			shutil.copy(current_mister, self.mister_install_dir + '/%s' % (Platform.get_install_cp_file_name(current_mister)))
 
-		# copy shell-file
-		try_copy_update_dot_sh_file(self.mister_install_dir + '/%s' % (self.mister_scripts_dir))
-
 	'''
 		clean
 	'''
