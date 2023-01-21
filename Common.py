@@ -167,7 +167,7 @@ def install_dependencies(dependencies = None):
 				elif sys.version_info.major == 2:
 					install_lib_cmd = 'pip ' + install_lib_cmd
 				else:
-					raise Exception('this: sys.version_info.major == %d not be supported! ' % (sys.version_info.major))
+					raise Exception('sys.version_info.major == %d not be supported! ' % (sys.version_info.major))
 
 				if IS_MACOSX or IS_LINUX:
 					install_lib_cmd = 'sudo ' + install_lib_cmd
