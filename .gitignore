@@ -12,6 +12,6 @@ Thumbs.db
 release_*
 update.sh
 *oauth*.txt
-/__pycache__
+*/__pycache__
 /node_modules
 /unrar_folders
