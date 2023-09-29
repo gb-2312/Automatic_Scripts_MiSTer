@@ -4,6 +4,7 @@
 *.pyc
 *.rar
 *.rbf
+.idea
 MiSTer_*
 .DS_Store
 Thumbs.db
