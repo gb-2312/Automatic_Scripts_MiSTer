@@ -1,11 +1,9 @@
 ._*
-/tmp
 *.bak
 *.log
 *.pyc
 *.rar
 *.rbf
-/build/
 MiSTer_*
 .DS_Store
 Thumbs.db
@@ -13,5 +11,4 @@ release_*
 update.sh
 *oauth*.txt
 */__pycache__
-/node_modules
 /unrar_folders
